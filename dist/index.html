@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Pikachu</title>
+    <style id="style"></style>
+    <style>* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s;
+        }
+
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            transition: all 0.3s;
+        }
+
+        #html {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 55vh;
+            overflow: auto;
+        }
+
+        #html::-webkit-scrollbar {
+            display: none;
+        }
+
+        #face {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 45vh;
+        }
+
+        @media(max-width: 500px) {
+            #html {
+                height: 60vh;
+            }
+
+            #face {
+                height: 40vh;
+            }
+
+            #fakeFace {
+                transform: scale(0.8);
+            }
+        }
+
+        .eye {
+            width: 64px;
+            height: 64px;
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            margin-left: -32px;
+        }
+
+        .eye::before {
+            content: "";
+            display: block;
+            border-radius: 50%;
+            position: relative;
+            width: 30px;
+            height: 30px;
+        }
+
+        .nose {
+            width: 0;
+            height: 0;
+            border-color: black transparent transparent;
+            border-radius: 12px;
+            position: absolute;
+            top: 90px;
+            left: 50%;
+
+        }
+
+        @keyframes wave {
+            0% {
+                transform: rotate(0);
+            }
+
+            33.3% {
+                transform: rotate(4deg);
+            }
+
+            66.6% {
+                transform: rotate(-4deg);
+            }
+
+            100% {
+                transform: rotate(0);
+            }
+        }
+
+        @media(min-width: 500px) {
+            .nose:hover {
+                animation: wave 160ms infinite;
+            }
+        }
+
+        @media(max-width: 500px) {
+            .nose:active {
+                animation: wave 160ms infinite;
+            }
+        }
+
+        .mouth {
+            position: relative;
+            width: 140px;
+            height: 100px;
+            left: 50%;
+            top: 116px;
+            margin-left: -70px;
+        }
+
+        .mouth .upper {
+            position: relative;
+            top: -14px;
+        }
+
+        .mouth .upper .lip {
+            width: 70px;
+            height: 20px;
+            position: absolute;
+            left: 50%;
+            margin-left: -35px;
+        }
+
+        .mouth .upper .lip.left {
+            border-top: none;
+            border-right: none;
+            z-index: 2;
+        }
+
+        .mouth .upper .lip.right {
+            border-top: none;
+            border-left: none;
+            z-index: 1;
+        }
+
+        .mouth .lower {
+            width: 100%;
+            height: 150px;
+            position: absolute;
+            top: 6px;
+            overflow: hidden;
+        }
+
+        .mouth .lower .circle1 {
+            position: absolute;
+            overflow: hidden;
+            border-radius: 50%;
+            width: 130px;
+            height: 500px;
+            bottom: 0;
+            left: 50%;
+            margin-left: -65px;
+        }
+
+        .mouth .lower .circle1 .circle2 {
+            width: 168px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            bottom: -84px;
+            margin-left: -84px;
+        }
+
+        .cheek {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 160px;
+            margin-left: -50px;
+        }</style>
+</head>
+
+<body>
+    <div id="html"></div>
+    <div id="face">
+        <div id="fakeFace">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="nose"></div>
+            <div class="mouth">
+                <div class="upper">
+                    <div class="lip left"></div>
+                    <div class="lip right"></div>
+                </div>
+                <div class="lower">
+                    <div class="circle1">
+                        <div class="circle2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="cheek left"></div>
+            <div class="cheek right"></div>
+        </div>
+    </div>
+    <script src="main.f0a88f4a.js"></script>
+</body>
+
+</html>
